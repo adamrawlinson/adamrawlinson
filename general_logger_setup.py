@@ -154,7 +154,7 @@ def general_logger(
         log_file_handler = logging.FileHandler(f'{log_file_path}.{log_file_type}', mode='a')
         log_file_handler.setLevel('INFO')
         logfile_format = logging.Formatter(
-            '%(asctime)s|%(name)s|%(levelname)s|   -   %(message)s',
+            '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
             datefmt="%Y-%m-%d %H:%M:%S"
         )
         log_file_handler.setFormatter(logfile_format)
