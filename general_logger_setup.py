@@ -75,7 +75,7 @@ class CustomTerminalFormat(logging.Formatter):
         logging.INFO: '\x1b[34;1m%(levelname)s\x1b[0m|%(asctime)s|\x1b[32;1m%(names)s\x1b[0m|   -   %(message)s',
         logging.WARNING: '\x1b[33;1m%(levelname)s\x1b[0m|%(asctime)s|\x1b[32;1m%(names)s\x1b[0m|\x1b[33;21m   -   %(message)s\x1b[0m',
         logging.ERROR: '\x1b[31;1m%(levelname)s\x1b[0m|%(asctime)s|\x1b[32;1m%(names)s\x1b[0m|\x1b[31;21m   -   %(message)s\x1b[0m',
-        logging.CRITICAL: '\x1b[37;1;41m%(levelname)s|%(asctime)s\x1b[0m|\x1b[37;1;41m%(names)s\x1b[0m|\x1b[37;1;41m   -   %(message)s\x1b[0m',
+        logging.CRITICAL: '\x1b[37;1;41m%(levelname)s\x1b[0m|\x1b[37;1;41m%(asctime)s\x1b[0m|\x1b[37;1;41m%(names)s\x1b[0m|\x1b[37;1;41m   -   %(message)s\x1b[0m',
     }
 
     def format(self, record):
