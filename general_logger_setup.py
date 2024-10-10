@@ -80,7 +80,7 @@ class CustomTerminalFormat(logging.Formatter):
 
     def format(self, record):
         log_format = self.FORMATS.get(record.levelno)
-        formatter = logging.Formatter(log_format)
+        formatter = logging.Formatter(log_format, datefmt='%Y-%m-%d %H:%M:%S')
 
         return formatter.format(record)
     
