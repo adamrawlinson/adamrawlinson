@@ -11,7 +11,6 @@ class SQLBuilder():
     def __init__(self):
         pass
 
-
     def col_selection(self, *selection_args):
         self.selection_args = selection_args
         
@@ -20,7 +19,6 @@ class SQLBuilder():
             self.selection_text += f'{arg}, '
 
         self.selection_text += self.selection_args[-1]
-
     
     def where_clause(self, first_arg: str = '', **where_kwargs):
         """
@@ -37,13 +35,13 @@ class SQLBuilder():
                 self.where_text += f'OR {value} '
     
 
-gh = SQLBuilder()
-gh.col_selection('DATETIME', 'ARG_WORKS', 'LOCATION', 'CHECK2', 'ARG_WORKS')
-gh.where_clause("MATER = 'Howdy Pardner'", w_and="fog = 'low'", w_or='LOCATION = 1')
+sqlbuild = SQLBuilder()
+sqlbuild.col_selection('DATETIME', 'ARG_WORKS', 'LOCATION', 'CHECK2', 'ARG_WORKS')
+sqlbuild.where_clause("MATER = 'Howdy Pardner'", w_and="fog = 'low'", w_or='LOCATION = 1')
 
 
-# print(gh.selection_text)
-# print(gh.where_text)
+# print(sqlbuild.selection_text)
+# print(sqlbuild.where_text)
 # Returns:
 # SELECT DATETIME, ARG_WORKS, LOCATION, CHECK2, ARG_WORKS
 # WHERE MATER = 'Howdy Pardner' AND fog = 'low' OR LOCATION = 1
